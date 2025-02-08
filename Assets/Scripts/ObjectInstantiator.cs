@@ -38,7 +38,7 @@ public class ObjectInstantiator : MonoBehaviour
         {
             case 1:
                 objectiveText.text = "Build a door by combining two triangles";
-                boardImage.sprite = boardImages[0].sprite;
+                boardImage.sprite = boardImages[1].sprite;
                 Instantiate(furnitureDropZones[0], spawnPoint.position, Quaternion.identity);
                 break;
             case 2:
@@ -76,6 +76,7 @@ public class ObjectInstantiator : MonoBehaviour
                     gameOverCheck = true;
                     objectiveText.gameObject.SetActive(false);
                     completionText.gameObject.SetActive(true);
+                    boardImage.sprite = boardImages[0].sprite;
                     completionText.text = "You Built a Door !";
                     actualBackgroundImage.sprite = backgroundImages[1].sprite;
                 }

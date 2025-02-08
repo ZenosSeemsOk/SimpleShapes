@@ -199,6 +199,7 @@ MonoBehaviour:
   - {fileID: 5730366910662496005, guid: 029c8e821638a444eb6504b0845bfaa9, type: 3}
   boardImage: {fileID: 705528365}
   boardImages:
+  - {fileID: 7302653054406375480, guid: 6a3873f6b50c93c41a7d4ebcc3332950, type: 3}
   - {fileID: 7302653054406375480, guid: 1e96539c7cba2ac43ad80e539a27b044, type: 3}
   objectiveText: {fileID: 1460737715}
   completionText: {fileID: 672204382}
@@ -1371,7 +1372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 195}
+  m_AnchoredPosition: {x: -7.2, y: 195}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1526852246
