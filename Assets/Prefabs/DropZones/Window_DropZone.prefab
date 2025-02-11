@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -873432841101365470}
   - component: {fileID: 5016184599480701186}
   m_Layer: 0
-  m_Name: Kite_DropZone
+  m_Name: Window_DropZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
