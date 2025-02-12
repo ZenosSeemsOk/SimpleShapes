@@ -1,88 +1,207 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private Vector3 startPosition;
-    private Canvas canvas; // Needed if you’re dragging UI elements; for world objects, adjust accordingly.
-    private ObjectInstantiator instantiator;
-    private LevelManager levelManager;
-    private bool mySnapCheck;
+    private Vector3 offset;
+    private Camera mainCamera;
+    private SnapToPosition currentSnap;
+    public bool isSnapped = false;
+    public float value;
+    private CardSpawner spawner;
+    private Vector3 originalPosition;
+    private Collider2D col; // Reference to the Collider2D
+
+    // Add a flag to control draggability
+    private bool isDraggable = true;
+
+    [Header("Gizmos Settings")]
+    [SerializeField] private bool showGizmos = true;
+    [SerializeField] private Color gizmoColor = Color.yellow;
+
+    private void Awake()
+    {
+        mainCamera = Camera.main;
+        originalPosition = transform.position;
+        col = GetComponent<Collider2D>(); // Get the Collider2D
+
+        // Ensure there's a collider
+        if (col == null)
+        {
+            Debug.LogError("No Collider2D found! Adding a BoxCollider2D.", this);
+            col = gameObject.AddComponent<BoxCollider2D>();
+        }
+    }
+
     private void Start()
     {
-        // If using UI (with RectTransform), get the parent Canvas.
-        canvas = GetComponentInParent<Canvas>();
-        instantiator = ObjectInstantiator.instance;
+        spawner = CardSpawner.instance;
     }
 
-    // Called when the drag starts
     public void OnBeginDrag(PointerEventData eventData)
     {
-        startPosition = transform.position;
+        // Prevent dragging if already snapped or not draggable
+        if (!isDraggable || isSnapped) return;
+
+        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(
+            eventData.position.x,
+            eventData.position.y,
+            mainCamera.nearClipPlane
+        ));
+
+        offset = transform.position - new Vector3(worldPosition.x, worldPosition.y, 0);
     }
 
-    // Called while dragging
     public void OnDrag(PointerEventData eventData)
     {
-        // Use a fixed z distance to ensure the object stays at the correct depth
-        Vector3 newPos = Camera.main.ScreenToWorldPoint(new Vector3(eventData.position.x, eventData.position.y, 10f));
-        newPos.z = 0; // Ensure the object remains on the correct plane
-        transform.position = newPos;
+        // Exit if not draggable
+        if (!isDraggable || isSnapped) return;
+
+        Vector3 screenBoundsMin = mainCamera.ScreenToWorldPoint(Vector3.zero);
+        Vector3 screenBoundsMax = mainCamera.ScreenToWorldPoint(new Vector3(
+            Screen.width,
+            Screen.height,
+            mainCamera.nearClipPlane
+        ));
+
+        // Use collider bounds instead of renderer
+        float cardHeight = col.bounds.size.y;
+        float cardWidth = col.bounds.size.x;
+
+        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(
+            eventData.position.x,
+            eventData.position.y,
+            mainCamera.nearClipPlane
+        ));
+
+        Vector3 newPosition = new Vector3(
+            worldPosition.x + offset.x,
+            worldPosition.y + offset.y,
+            0
+        );
+
+        // Clamp position using collider-based calculations
+        newPosition.x = Mathf.Clamp(
+            newPosition.x,
+            screenBoundsMin.x + cardWidth / 2,
+            screenBoundsMax.x - cardWidth / 2
+        );
+
+        newPosition.y = Mathf.Clamp(
+            newPosition.y,
+            screenBoundsMin.y + cardHeight / 2,
+            screenBoundsMax.y - cardHeight / 2
+        );
+
+        transform.position = newPosition;
     }
 
-
-    // Called when drag ends
     public void OnEndDrag(PointerEventData eventData)
     {
-        // Check if dropped over a valid drop zone
-        DropZone dropZone = GetDropZoneUnderPointer(eventData);
-        if (dropZone != null && dropZone.CanAcceptShape(gameObject))
+        // Exit if not draggable
+        if (!isDraggable || isSnapped) return;
+
+        SnapToPosition validSnap = FindValidSnapPoint();
+
+        if (validSnap != null)
         {
-            // Snap into place and let the drop zone handle any extra logic
-            transform.position = dropZone.GetSnapPosition();
-            instantiator.isSnapped = true;
-            if(!instantiator.gameOverCheck && !mySnapCheck)
-            {
-                instantiator.snapCount += 1;
-                mySnapCheck = true;
-            }
-            if (instantiator.isSnapped && !instantiator.hasInstantiated)
-            {
-                instantiator.SnapCheck();
-            }
+            SnapToPosition(validSnap);
         }
         else
         {
-            // Return to original position if not dropped correctly
-            transform.position = startPosition;
-            // Optionally, play an "oops" sound here or add a wiggle animation.
+            if (!isSnapped)
+            {
+                StartCoroutine(MoveBackToOriginalPosition());
+            }
         }
     }
 
-    // Helper method to detect drop zone under pointer
-    private DropZone GetDropZoneUnderPointer(PointerEventData eventData)
+    private IEnumerator MoveBackToOriginalPosition()
     {
-        var results = new System.Collections.Generic.List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventData, results);
-        foreach (var result in results)
+        float duration = 0.5f;
+        float elapsed = 0f;
+        Vector3 startPosition = transform.position;
+
+        while (elapsed < duration)
         {
-            DropZone zone = result.gameObject.GetComponent<DropZone>();
-            if (zone != null)
+            transform.position = Vector3.Lerp(startPosition, originalPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = originalPosition;
+    }
+
+    private SnapToPosition FindValidSnapPoint()
+    {
+        Collider2D[] overlappingColliders = Physics2D.OverlapCircleAll(
+            transform.position,
+            1f // Increased detection radius
+        );
+
+        SnapToPosition closestSnap = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (Collider2D collider in overlappingColliders)
+        {
+            if (!collider.CompareTag("ScalePoint")) //!collider.CompareTag("Position") &&)
+                continue;
+
+            SnapToPosition snap = collider.GetComponent<SnapToPosition>();
+            if (snap != null && snap.value == value && !snap.isSnapped)
             {
-                Debug.Log("Drop zone detected: " + zone.gameObject.name);
-                return zone;
+                float distance = Vector2.Distance(transform.position, snap.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestSnap = snap;
+                }
             }
         }
-        Debug.Log("No drop zone detected.");
-        return null;
+        return closestSnap;
+    }
+
+    private void SnapToPosition(SnapToPosition snap)
+    {
+        if (snap == null || snap.value != value) return;
+
+        // Disable dragging FIRST
+        isDraggable = false;
+        col.enabled = false;
+
+        // Then snap
+        transform.position = snap.transform.position;
+        currentSnap = snap;
+        currentSnap.isSnapped = true;
+        isSnapped = true;
+
+        // Trigger snap events
+        spawner.snapCount++;
+        spawner.SnapCheck();
     }
 
     private void Update()
     {
-        if(instantiator.gameOverCheck)
+        if (spawner.gameOverCheck)
         {
             gameObject.SetActive(false);
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        if (!showGizmos) return;
+
+        // Draw the detection radius as a wireframe circle
+        Gizmos.color = gizmoColor;
+        Gizmos.DrawWireSphere(transform.position, 0.4f); // Match the radius used in FindValidSnapPoint
+    }
+
+    // Optional: Reset draggability for reuse
+    public void ResetDraggability()
+    {
+        isDraggable = true;
+        col.enabled = true;
+        isSnapped = false;
+    }
 }

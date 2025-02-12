@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Triangle
+  - ScalePoint
   layers:
   - Default
   - TransparentFX
