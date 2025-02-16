@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0532a624daecc4c469703d6291c51adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 1
+  Level: 9
 --- !u!4 &29315299
 Transform:
   m_ObjectHideFlags: 0
@@ -197,6 +197,20 @@ MonoBehaviour:
   shapes:
   - {fileID: 8926932620569053936, guid: c36bf5e76391e454fbbd73ca176a9b77, type: 3}
   - {fileID: 4008156909269566689, guid: 622b8454c1741a548a8eac614afe2a6f, type: 3}
+  - {fileID: 6982451687224561706, guid: d90c870cd5e6c4a449bb92f49d3cf0d9, type: 3}
+  - {fileID: 3173775915858302521, guid: 911e753e454238949a434da71817417e, type: 3}
+  - {fileID: 5364747305339347469, guid: d500426e638a61f42a7633b6a143b050, type: 3}
+  - {fileID: 5364747305339347469, guid: a5e6ca38707869a459b65f2ce30c41a0, type: 3}
+  - {fileID: 5364747305339347469, guid: 97bb29f26e641bc4aa2f13c624277f18, type: 3}
+  - {fileID: 5364747305339347469, guid: d51c9116b9e84ed44a16a9c41c85b668, type: 3}
+  - {fileID: 5364747305339347469, guid: d400cde9b2bd8e04ca8b926f10f08c13, type: 3}
+  - {fileID: 5364747305339347469, guid: 3667a8bdc607d5c48ba40a6ea4b33a45, type: 3}
+  - {fileID: 5364747305339347469, guid: b6a822cae12a26b4bb807cc1fc557795, type: 3}
+  - {fileID: 5364747305339347469, guid: 44dcadc5b7924ae419ca43651d0ec495, type: 3}
+  - {fileID: 6982451687224561706, guid: 3a0abf5407a76914d984c421090c8eb8, type: 3}
+  - {fileID: 6982451687224561706, guid: a091d79c460813740921e9bbacf8829f, type: 3}
+  - {fileID: 6982451687224561706, guid: 82f693f20a6d3f5418cffacf4225b265, type: 3}
+  - {fileID: 5364747305339347469, guid: c590a350fe21fd643ace5dd744759e26, type: 3}
   shapeSpawns:
   - {fileID: 825418521}
   - {fileID: 508245944}
@@ -210,15 +224,47 @@ MonoBehaviour:
   - {fileID: 7302653054406375480, guid: 1e96539c7cba2ac43ad80e539a27b044, type: 3}
   objectiveNote:
   - Build a door by combining two triangles
+  - Build a window by combining two triangles
+  - Build a sign by combining two triangles
+  - Build a kite by combining two diamonds
+  - Build a window by combining two squares
+  - Make a Flag
+  - Build a oval by combining two circles
+  - Build an oval table top
+  - Create an oval picture frame
   completionNote:
   - You Built a Door!
+  - You Built a Window!
+  - You Built a Sign!
+  - You Built a Kite!
+  - You Built a Window!
+  - You Made a Flag!
+  - You Built a Oval!
+  - You Built a Table!
+  - You Created a Picture Frame!
   objectiveText: {fileID: 1460737715}
   completionText: {fileID: 672204382}
   Furnitures:
   - {fileID: 4262479792184378730, guid: b6e3ae676bffa2e4cad6c3526eaf5c98, type: 3}
+  - {fileID: 4710319666585292620, guid: 9413e1ace1be9134fac1c9d2acc9388b, type: 3}
+  - {fileID: 4710319666585292620, guid: 6c5b8b89b734e764ea65f39288a47b3e, type: 3}
+  - {fileID: 4710319666585292620, guid: a30242c43fae8e04f8439428260e9e24, type: 3}
+  - {fileID: 4710319666585292620, guid: 56ca1061cf54dc8468cdf478e2e9b169, type: 3}
+  - {fileID: 4710319666585292620, guid: 38d1d7b67bc5f8649b9f9cea49f2a7b3, type: 3}
+  - {fileID: 4710319666585292620, guid: 47cfe649b31afe9499fbb2f50c370d7a, type: 3}
+  - {fileID: 4710319666585292620, guid: 27f4823613f50a942ade15bd734bee0e, type: 3}
+  - {fileID: 4710319666585292620, guid: 9b0209351444e954cb089b00ecc19908, type: 3}
   spawnPoint: {fileID: 1526852245}
   furnitureDropZones:
   - {fileID: 3178706968378822854, guid: 3ffe8687ecb85ab4b975a548c94f5edd, type: 3}
+  - {fileID: 5855924981822086798, guid: b98136f0039f99747b7e7b8f1d8902e6, type: 3}
+  - {fileID: 5855924981822086798, guid: d1688fd677e8da4498023cf817876a4c, type: 3}
+  - {fileID: 5855924981822086798, guid: d649ca6480f5da44d8269f3d64728a3d, type: 3}
+  - {fileID: 5855924981822086798, guid: 43f8adebe24fb4d4fb2c3d5953cfa66b, type: 3}
+  - {fileID: 5855924981822086798, guid: fd471c136eaed41418990b0b761ac6b6, type: 3}
+  - {fileID: 5855924981822086798, guid: fa4dd43cdee9b2a45880de24b0f3a67b, type: 3}
+  - {fileID: 5855924981822086798, guid: 055917cd1bf1a004c9f33c9aba0117ed, type: 3}
+  - {fileID: 5855924981822086798, guid: 272d863630364e24fa53812444042e7f, type: 3}
   snapCount: 0
   gameOverCheck: 0
   isSnapped: 0
@@ -1157,7 +1203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: 195}
+  m_AnchoredPosition: {x: 0, y: 200}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1531945657
