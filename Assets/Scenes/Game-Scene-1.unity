@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0532a624daecc4c469703d6291c51adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 9
+  Level: 12
 --- !u!4 &29315299
 Transform:
   m_ObjectHideFlags: 0
@@ -211,6 +211,11 @@ MonoBehaviour:
   - {fileID: 6982451687224561706, guid: a091d79c460813740921e9bbacf8829f, type: 3}
   - {fileID: 6982451687224561706, guid: 82f693f20a6d3f5418cffacf4225b265, type: 3}
   - {fileID: 5364747305339347469, guid: c590a350fe21fd643ace5dd744759e26, type: 3}
+  - {fileID: 5364747305339347469, guid: 3cc22d23f3ac7b54fa59378902b98ec6, type: 3}
+  - {fileID: 5364747305339347469, guid: 0b34dbd8fd9b0594cb5b1fb7a568877b, type: 3}
+  - {fileID: 5364747305339347469, guid: eeb62710816eb1f4888b75c0f7d5128a, type: 3}
+  - {fileID: 5364747305339347469, guid: e1b5afe031eb7304090135751ac884b3, type: 3}
+  - {fileID: 5364747305339347469, guid: 81c102d5aa8d83d488ee481c42fafd7b, type: 3}
   shapeSpawns:
   - {fileID: 825418521}
   - {fileID: 508245944}
@@ -218,10 +223,13 @@ MonoBehaviour:
   backgroundImages:
   - {fileID: 2977697396848479615, guid: 697985817fe539d44ae635a2274f011d, type: 3}
   - {fileID: 5730366910662496005, guid: 029c8e821638a444eb6504b0845bfaa9, type: 3}
+  - {fileID: 5730366910662496005, guid: 953d650dd63d95e4ea0c6c8309491cf0, type: 3}
+  - {fileID: 5730366910662496005, guid: d4a36bc6648c81e42a52f202700e935a, type: 3}
   boardImage: {fileID: 705528365}
   boardImages:
   - {fileID: 7302653054406375480, guid: 6a3873f6b50c93c41a7d4ebcc3332950, type: 3}
   - {fileID: 7302653054406375480, guid: 1e96539c7cba2ac43ad80e539a27b044, type: 3}
+  - {fileID: 7302653054406375480, guid: c030c2384ed1b9149b421ba273f1f927, type: 3}
   objectiveNote:
   - Build a door by combining two triangles
   - Build a window by combining two triangles
@@ -232,6 +240,9 @@ MonoBehaviour:
   - Build a oval by combining two circles
   - Build an oval table top
   - Create an oval picture frame
+  - Make a dog house
+  - Make a roof for the dog house
+  - Create a tent
   completionNote:
   - You Built a Door!
   - You Built a Window!
@@ -242,6 +253,9 @@ MonoBehaviour:
   - You Built a Oval!
   - You Built a Table!
   - You Created a Picture Frame!
+  - You Created a Dog House!
+  - You added a Roof to the house!
+  - You made a Tent!
   objectiveText: {fileID: 1460737715}
   completionText: {fileID: 672204382}
   Furnitures:
@@ -254,6 +268,9 @@ MonoBehaviour:
   - {fileID: 4710319666585292620, guid: 47cfe649b31afe9499fbb2f50c370d7a, type: 3}
   - {fileID: 4710319666585292620, guid: 27f4823613f50a942ade15bd734bee0e, type: 3}
   - {fileID: 4710319666585292620, guid: 9b0209351444e954cb089b00ecc19908, type: 3}
+  - {fileID: 4710319666585292620, guid: d7a8238847931cf47aa2dca3252316e6, type: 3}
+  - {fileID: 4710319666585292620, guid: 2db3814e21e9d8e4c862733f7b67ecab, type: 3}
+  - {fileID: 4710319666585292620, guid: 376c1479ccaf9f94f925d1bbf1e48d5a, type: 3}
   spawnPoint: {fileID: 1526852245}
   furnitureDropZones:
   - {fileID: 3178706968378822854, guid: 3ffe8687ecb85ab4b975a548c94f5edd, type: 3}
@@ -265,6 +282,9 @@ MonoBehaviour:
   - {fileID: 5855924981822086798, guid: fa4dd43cdee9b2a45880de24b0f3a67b, type: 3}
   - {fileID: 5855924981822086798, guid: 055917cd1bf1a004c9f33c9aba0117ed, type: 3}
   - {fileID: 5855924981822086798, guid: 272d863630364e24fa53812444042e7f, type: 3}
+  - {fileID: 5855924981822086798, guid: 56a805bbe1316d047b0d4a8bf9d3b646, type: 3}
+  - {fileID: 5855924981822086798, guid: 133947ce242c269448099d43fcf4e84c, type: 3}
+  - {fileID: 5855924981822086798, guid: fa2e37bae6f54084098d26a1de575465, type: 3}
   snapCount: 0
   gameOverCheck: 0
   isSnapped: 0
@@ -316,7 +336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -325}
+  m_AnchoredPosition: {x: 408.68, y: -325}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
@@ -758,7 +778,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1378031794980948460, guid: c8a72100d832ebe4ebf2e2a5441ea73d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8a72100d832ebe4ebf2e2a5441ea73d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1069,7 +1089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -598.77, y: -209.27}
+  m_AnchoredPosition: {x: -582.2, y: -223.92}
   m_SizeDelta: {x: 530.89, y: 146.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460737715
