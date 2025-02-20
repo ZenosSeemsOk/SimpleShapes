@@ -128,6 +128,56 @@ public class CardSpawner : MonoBehaviour
                 Instantiate(shapes[19], shapeSpawns[0]);
                 Instantiate(shapes[20], shapeSpawns[1]);
                 break;
+            case 13:
+                objectiveText.text = objectiveNote[12];
+                boardImage.sprite = boardImages[2].sprite;
+                actualBackgroundImage.sprite = backgroundImages[2].sprite;
+                Instantiate(furnitureDropZones[12], spawnPoint);
+                Instantiate(shapes[21], shapeSpawns[0]);
+                Instantiate(shapes[22], shapeSpawns[1]);
+                Instantiate(shapes[23], shapeSpawns[2]);
+                Instantiate(shapes[24], shapeSpawns[3]);
+                break;
+            case 14:
+                objectiveText.text = objectiveNote[13];
+                boardImage.sprite = boardImages[2].sprite;
+                actualBackgroundImage.sprite = backgroundImages[2].sprite;
+                Instantiate(furnitureDropZones[13], spawnPoint);
+                Instantiate(shapes[25], shapeSpawns[0]);
+                Instantiate(shapes[26], shapeSpawns[1]);
+                Instantiate(shapes[27], shapeSpawns[2]);
+                Instantiate(shapes[28], shapeSpawns[3]);
+                break;
+            case 15:
+                objectiveText.text = objectiveNote[14];
+                boardImage.sprite = boardImages[2].sprite;
+                actualBackgroundImage.sprite = backgroundImages[2].sprite;
+                Instantiate(furnitureDropZones[14], spawnPoint);
+                Instantiate(shapes[29], shapeSpawns[0]);
+                Instantiate(shapes[30], shapeSpawns[1]);
+                Instantiate(shapes[31], shapeSpawns[2]);
+                Instantiate(shapes[32], shapeSpawns[3]);
+                break;
+            case 16:
+                objectiveText.text = objectiveNote[15];
+                boardImage.sprite = boardImages[3].sprite;
+                actualBackgroundImage.sprite = backgroundImages[2].sprite;
+                Instantiate(furnitureDropZones[15], spawnPoint);
+                Instantiate(shapes[33], shapeSpawns[0]);
+                Instantiate(shapes[34], shapeSpawns[1]);
+                Instantiate(shapes[35], shapeSpawns[2]);
+                Instantiate(shapes[36], shapeSpawns[3]);
+                break;
+            case 17:
+                objectiveText.text = objectiveNote[16];
+                boardImage.sprite = boardImages[3].sprite;
+                actualBackgroundImage.sprite = backgroundImages[2].sprite;
+                Instantiate(furnitureDropZones[16], spawnPoint);
+                Instantiate(shapes[37], shapeSpawns[0]);
+                Instantiate(shapes[38], shapeSpawns[1]);
+                Instantiate(shapes[39], shapeSpawns[2]);
+                Instantiate(shapes[40], shapeSpawns[3]);
+                break;
         }
     }
 
@@ -279,6 +329,66 @@ public class CardSpawner : MonoBehaviour
                     objectiveText.gameObject.SetActive(false);
                     completionText.gameObject.SetActive(true);
                     completionText.text = completionNote[11];
+                    actualBackgroundImage.sprite = backgroundImages[3].sprite;
+                }
+                break;
+            case 13:
+                if (snapCount == 4) // Check with the Number of shapes snapped in the particular scene
+                {
+                    spawnedFurniture = Instantiate(Furnitures[12], spawnPoint);
+                    hasInstantiated = true;
+                    gameOverCheck = true;
+                    objectiveText.gameObject.SetActive(false);
+                    completionText.gameObject.SetActive(true);
+                    completionText.text = completionNote[12];
+                    actualBackgroundImage.sprite = backgroundImages[3].sprite;
+                }
+                break;
+            case 14:
+                if (snapCount == 4) // Check with the Number of shapes snapped in the particular scene
+                {
+                    spawnedFurniture = Instantiate(Furnitures[13], spawnPoint);
+                    hasInstantiated = true;
+                    gameOverCheck = true;
+                    objectiveText.gameObject.SetActive(false);
+                    completionText.gameObject.SetActive(true);
+                    completionText.text = completionNote[13];
+                    actualBackgroundImage.sprite = backgroundImages[3].sprite;
+                }
+                break;
+            case 15:
+                if (snapCount == 4) // Check with the Number of shapes snapped in the particular scene
+                {
+                    spawnedFurniture = Instantiate(Furnitures[14], spawnPoint);
+                    hasInstantiated = true;
+                    gameOverCheck = true;
+                    objectiveText.gameObject.SetActive(false);
+                    completionText.gameObject.SetActive(true);
+                    completionText.text = completionNote[14];
+                    actualBackgroundImage.sprite = backgroundImages[3].sprite;
+                }
+                break;
+            case 16:
+                if (snapCount == 4) // Check with the Number of shapes snapped in the particular scene
+                {
+                    spawnedFurniture = Instantiate(Furnitures[15], spawnPoint);
+                    hasInstantiated = true;
+                    gameOverCheck = true;
+                    objectiveText.gameObject.SetActive(false);
+                    completionText.gameObject.SetActive(true);
+                    completionText.text = completionNote[15];
+                    actualBackgroundImage.sprite = backgroundImages[3].sprite;
+                }
+                break;
+            case 17:
+                if (snapCount == 4) // Check with the Number of shapes snapped in the particular scene
+                {
+                    spawnedFurniture = Instantiate(Furnitures[16], spawnPoint);
+                    hasInstantiated = true;
+                    gameOverCheck = true;
+                    objectiveText.gameObject.SetActive(false);
+                    completionText.gameObject.SetActive(true);
+                    completionText.text = completionNote[16];
                     actualBackgroundImage.sprite = backgroundImages[3].sprite;
                 }
                 break;

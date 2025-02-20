@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0532a624daecc4c469703d6291c51adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 12
+  Level: 17
 --- !u!4 &29315299
 Transform:
   m_ObjectHideFlags: 0
@@ -164,6 +164,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &233335249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 233335250}
+  m_Layer: 5
+  m_Name: shape_Spawn_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &233335250
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233335249}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1531945658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 445.1, y: -325}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &273292762
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,20 +240,42 @@ MonoBehaviour:
   - {fileID: 5364747305339347469, guid: d51c9116b9e84ed44a16a9c41c85b668, type: 3}
   - {fileID: 5364747305339347469, guid: d400cde9b2bd8e04ca8b926f10f08c13, type: 3}
   - {fileID: 5364747305339347469, guid: 3667a8bdc607d5c48ba40a6ea4b33a45, type: 3}
-  - {fileID: 5364747305339347469, guid: b6a822cae12a26b4bb807cc1fc557795, type: 3}
   - {fileID: 5364747305339347469, guid: 44dcadc5b7924ae419ca43651d0ec495, type: 3}
+  - {fileID: 5364747305339347469, guid: b6a822cae12a26b4bb807cc1fc557795, type: 3}
   - {fileID: 6982451687224561706, guid: 3a0abf5407a76914d984c421090c8eb8, type: 3}
   - {fileID: 6982451687224561706, guid: a091d79c460813740921e9bbacf8829f, type: 3}
   - {fileID: 6982451687224561706, guid: 82f693f20a6d3f5418cffacf4225b265, type: 3}
   - {fileID: 5364747305339347469, guid: c590a350fe21fd643ace5dd744759e26, type: 3}
-  - {fileID: 5364747305339347469, guid: 3cc22d23f3ac7b54fa59378902b98ec6, type: 3}
   - {fileID: 5364747305339347469, guid: 0b34dbd8fd9b0594cb5b1fb7a568877b, type: 3}
+  - {fileID: 5364747305339347469, guid: 3cc22d23f3ac7b54fa59378902b98ec6, type: 3}
   - {fileID: 5364747305339347469, guid: eeb62710816eb1f4888b75c0f7d5128a, type: 3}
-  - {fileID: 5364747305339347469, guid: e1b5afe031eb7304090135751ac884b3, type: 3}
   - {fileID: 5364747305339347469, guid: 81c102d5aa8d83d488ee481c42fafd7b, type: 3}
+  - {fileID: 5364747305339347469, guid: e1b5afe031eb7304090135751ac884b3, type: 3}
+  - {fileID: 5364747305339347469, guid: f8992d572741a36468b78ec9976d8947, type: 3}
+  - {fileID: 5364747305339347469, guid: ca6c0da0b1945a040abafee42485d918, type: 3}
+  - {fileID: 5364747305339347469, guid: c560ad526f89e2448ba1e970ab6a8095, type: 3}
+  - {fileID: 5364747305339347469, guid: 1b69a372de47e5a4baec43b9cd8aa8c6, type: 3}
+  - {fileID: 5364747305339347469, guid: 787f9edf2bff1574a969e295234c802d, type: 3}
+  - {fileID: 5364747305339347469, guid: 71ca51d7c6f8eb245b4fa9023b2379cd, type: 3}
+  - {fileID: 5364747305339347469, guid: 6043f7674b59d8d4ebf61d77b922df30, type: 3}
+  - {fileID: 5364747305339347469, guid: f2f809d576295d849b01c3078b98c164, type: 3}
+  - {fileID: 5364747305339347469, guid: f9d19d12930f81446a38534acee1e4da, type: 3}
+  - {fileID: 5364747305339347469, guid: 51de748b97f4f9f4cb5f02e171304afc, type: 3}
+  - {fileID: 5364747305339347469, guid: f02d7d259cbb70948ac63ab8fdd2aa6d, type: 3}
+  - {fileID: 5364747305339347469, guid: 0e638430caa4a134f8d0d7278cc12870, type: 3}
+  - {fileID: 5364747305339347469, guid: 50ed3601b8b54854a9d1f755dd5814b0, type: 3}
+  - {fileID: 5364747305339347469, guid: a21477bdfd6fdec4ca6c6820f969e7c3, type: 3}
+  - {fileID: 5364747305339347469, guid: af3fd0141c1c41947a5fe600ad16c564, type: 3}
+  - {fileID: 5364747305339347469, guid: 44cb66da1e7db02419e398cdf9fe0ffd, type: 3}
+  - {fileID: 5364747305339347469, guid: 7994d7744cfcca145b9a3c23657086e5, type: 3}
+  - {fileID: 5364747305339347469, guid: c2d1f3f10af123144b3f734211755d39, type: 3}
+  - {fileID: 5364747305339347469, guid: 32c684ea6cf5bee4ebe46a204f33cb19, type: 3}
+  - {fileID: 5364747305339347469, guid: 3ab00e177ff20664b9b116ee734fcde8, type: 3}
   shapeSpawns:
   - {fileID: 825418521}
   - {fileID: 508245944}
+  - {fileID: 233335250}
+  - {fileID: 1700493210}
   actualBackgroundImage: {fileID: 1750979780}
   backgroundImages:
   - {fileID: 2977697396848479615, guid: 697985817fe539d44ae635a2274f011d, type: 3}
@@ -230,6 +287,7 @@ MonoBehaviour:
   - {fileID: 7302653054406375480, guid: 6a3873f6b50c93c41a7d4ebcc3332950, type: 3}
   - {fileID: 7302653054406375480, guid: 1e96539c7cba2ac43ad80e539a27b044, type: 3}
   - {fileID: 7302653054406375480, guid: c030c2384ed1b9149b421ba273f1f927, type: 3}
+  - {fileID: 7302653054406375480, guid: 8b0eac40f951ede4c9df8058dc24741c, type: 3}
   objectiveNote:
   - Build a door by combining two triangles
   - Build a window by combining two triangles
@@ -239,10 +297,15 @@ MonoBehaviour:
   - Make a Flag
   - Build a oval by combining two circles
   - Build an oval table top
-  - Create an oval picture frame
+  - Create an Oval Picture Frame
   - Make a dog house
   - Make a roof for the dog house
   - Create a tent
+  - Arrange four rectangles to create square frames
+  - Make a Picture Frame
+  - Construct a Shelf Unit Frame
+  - Create a Tabletop Shape
+  - Now add legs of the Tabletop
   completionNote:
   - You Built a Door!
   - You Built a Window!
@@ -256,6 +319,11 @@ MonoBehaviour:
   - You Created a Dog House!
   - You added a Roof to the house!
   - You made a Tent!
+  - You Created a Window!
+  - Yay! You made a Picture Frame
+  - You made a Shelf
+  - You Created a Tabletop!
+  - You Created a Complete Tabletop!
   objectiveText: {fileID: 1460737715}
   completionText: {fileID: 672204382}
   Furnitures:
@@ -271,6 +339,11 @@ MonoBehaviour:
   - {fileID: 4710319666585292620, guid: d7a8238847931cf47aa2dca3252316e6, type: 3}
   - {fileID: 4710319666585292620, guid: 2db3814e21e9d8e4c862733f7b67ecab, type: 3}
   - {fileID: 4710319666585292620, guid: 376c1479ccaf9f94f925d1bbf1e48d5a, type: 3}
+  - {fileID: 4710319666585292620, guid: 94f0dba58c76f21469a9870d1d95f175, type: 3}
+  - {fileID: 4710319666585292620, guid: bc6c2fb7f0a28734594a7c11059d40ca, type: 3}
+  - {fileID: 4710319666585292620, guid: a1afa7187b79a22408efb77c5850724a, type: 3}
+  - {fileID: 4710319666585292620, guid: 797171a354fd03b4b96c8748783c11dd, type: 3}
+  - {fileID: 4710319666585292620, guid: 468741a7f6a826b4ca6379561edf5d99, type: 3}
   spawnPoint: {fileID: 1526852245}
   furnitureDropZones:
   - {fileID: 3178706968378822854, guid: 3ffe8687ecb85ab4b975a548c94f5edd, type: 3}
@@ -285,6 +358,11 @@ MonoBehaviour:
   - {fileID: 5855924981822086798, guid: 56a805bbe1316d047b0d4a8bf9d3b646, type: 3}
   - {fileID: 5855924981822086798, guid: 133947ce242c269448099d43fcf4e84c, type: 3}
   - {fileID: 5855924981822086798, guid: fa2e37bae6f54084098d26a1de575465, type: 3}
+  - {fileID: 5855924981822086798, guid: d17601f976aec8642baa5fc776d90cd2, type: 3}
+  - {fileID: 5855924981822086798, guid: a65b0185c70b04f44bceaae4f6d62ef8, type: 3}
+  - {fileID: 5855924981822086798, guid: 9070d2b1ebd32374e89f41b2b75d29bf, type: 3}
+  - {fileID: 5855924981822086798, guid: 439b6acc8ecadc04a9c0c93244679f8c, type: 3}
+  - {fileID: 5855924981822086798, guid: be2c6d9cbb8643148984a1c46f83d3ab, type: 3}
   snapCount: 0
   gameOverCheck: 0
   isSnapped: 0
@@ -336,7 +414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 408.68, y: -325}
+  m_AnchoredPosition: {x: 152.1, y: -325}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
@@ -973,7 +1051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -325}
+  m_AnchoredPosition: {x: -150.1, y: -325}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1004525720
@@ -1256,11 +1334,48 @@ RectTransform:
   m_Children:
   - {fileID: 825418521}
   - {fileID: 508245944}
+  - {fileID: 233335250}
+  - {fileID: 1700493210}
   m_Father: {fileID: 711684491}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1700493209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700493210}
+  m_Layer: 5
+  m_Name: shape_Spawn_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1700493210
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700493209}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1531945658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 748.8, y: -325}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1750979778
